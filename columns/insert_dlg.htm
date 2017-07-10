@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Edit row/columns</title>
+    <script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+    <script type="text/javascript" src="js/insert_dlg.js"></script>
+</head>
+<body>
+
+<form onsubmit="InsertRowDialog.insert();return false;" action="#">
+
+    <fieldset>
+        <p>
+            <label for="columnNumber">Column Number:</label>
+            <input type="number" min="1" name="columnNumber" id="columnNumber" value="4">
+        </p>
+        <p>
+            <label for="columnWidth">Column Width:</label>
+            <select name="columnWidth" id="columnWidth">
+                <option value="2">16%</option>
+                <option value="3" selected>25%</option>
+                <option value="4">33%</option>
+                <option value="6">50%</option>
+            </select>
+        </p>
+        <p>
+            <label for="color">Column:</label>
+            <select name="color" id="color">
+                <option value="gray">Gray</option>
+                <option value="light-gray">Light Gray</option>
+                <option value="white">White</option>
+            </select>
+        </p>
+        <p>
+            <label>Position:</label>
+            <label for="position_before">
+                <input type="radio" id="position_before" name="position" value="before" checked>Before</label>
+            <label for="position_after">
+                <input type="radio" id="position_after" name="position" value="after">After</label>
+        </p>
+    </fieldset>
+    <div class="mceActionPanel">
+        <input type="submit" value="Insert"/>
+    </div>
+</form>
+
+</body>
+</html>

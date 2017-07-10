@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Edit row/columns</title>
+    <script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+    <script type="text/javascript" src="../../utils/mctabs.js"></script>
+    <script type="text/javascript" src="js/edit_dlg.js"></script>
+</head>
+<body>
+
+<form action="#">
+    <div class="tabs">
+        <ul>
+            <li id="row_tab" class="current">
+                <span>
+                    <a href="javascript:mcTabs.displayTab('row_tab','row_panel');"
+                       onmousedown="return false;">Row</a>
+                </span>
+            </li>
+            <li id="column_tab">
+                <span>
+                    <a href="javascript:mcTabs.displayTab('column_tab','column_panel');"
+                       onmousedown="return false;">Column</a>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="panel_wrapper">
+        <div id="row_panel" class="panel current">
+            <fieldset>
+                <p>
+                    <button onclick="EditRowDialog.insertColumn();return false;">Add Column</button>
+                    <label for="newColumnWidth">Column Width:</label>
+                    <select name="newColumnWidth" id="newColumnWidth">
+                        <option value="2">16%</option>
+                        <option value="3">25%</option>
+                        <option value="4">33%</option>
+                        <option value="6">50%</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="color">Column:</label>
+                    <select name="color" id="color">
+                        <option value="gray">Gray</option>
+                        <option value="light-gray">Light Gray</option>
+                        <option value="white">White</option>
+                    </select>
+                </p>
+            </fieldset>
+            <div class="mceActionPanel">
+                <input type="button" id="save" name="saveRow" value="Save Row"
+                       onclick="EditRowDialog.saveRow();return false;"/>
+                <input type="button" id="delete" name="deleteRow" value="Delete Row"
+                       onclick="EditRowDialog.deleteRow();return false;"/>
+            </div>
+        </div>
+
+        <div id="column_panel" class="panel">
+            <fieldset>
+                <p>
+                    <label for="columnWidth">Column Width:</label>
+                    <select name="columnWidth" id="columnWidth">
+                        <option value="2">16%</option>
+                        <option value="3">25%</option>
+                        <option value="4">33%</option>
+                        <option value="6">50%</option>
+                    </select>
+                </p>
+            </fieldset>
+            <div class="mceActionPanel">
+                <input type="button" id="saveColumn" name="saveColumn" value="Save Column"
+                       onclick="EditRowDialog.saveColumn();return false;"/>
+                <input type="button" id="deleteColumn" name="deleteColumn" value="Delete Column"
+                       onclick="EditRowDialog.deleteColumn();return false;"/>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+</body>
+</html>
